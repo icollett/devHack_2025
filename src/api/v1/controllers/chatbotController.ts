@@ -22,7 +22,7 @@ export const getChatHistory = async (
 	next: NextFunction
 ): Promise<void> => {
 	try {
-		const chatHistory: JSON = await chatbotService.getChatHistory();
+		const chatHistory: any = await chatbotService.getChatHistory();
 		res.status(200).json({ chatHistory: chatHistory });
 
 	} catch (error) {

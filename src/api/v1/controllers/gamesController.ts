@@ -1,6 +1,5 @@
 import { NextFunction, Request, Response } from "express";
 import * as gamesService from "../services/gamesService"
-import { MessageResponse } from "../services/gamesService";
 
 export const getQuizQuestion = async (
 	req: Request,
@@ -8,8 +7,9 @@ export const getQuizQuestion = async (
 	next: NextFunction
 ): Promise<void> => {
 	try {
-		const question = await gamesService.getQuestion(req.params)
+		const question: string = await gamesService.getQuestion(req.params);
+		res.status(200).json(question);
 	} catch (error) {
-		next(error)
+		next(error);
 	}
 }

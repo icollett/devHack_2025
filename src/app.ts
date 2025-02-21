@@ -13,5 +13,7 @@ app.use(morgan("combined"));
 app.use(express.json());
 
 
-app.use("api/v1/games", gamesRoutes)
-app.use("api/v1/chatbot", chatbotRoutes)
+app.use("/api/v1/games", gamesRoutes)
+app.use("/api/v1/chatbot", chatbotRoutes)
+
+export default app;

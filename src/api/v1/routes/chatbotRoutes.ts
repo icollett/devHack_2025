@@ -9,3 +9,5 @@ router.post("/", chatbotController.createMessage);
 router.get("/", chatbotController.getChatHistory);
 
 router.delete("/", chatbotController.deleteChatHistory);
+
+export default router;

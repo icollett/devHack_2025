@@ -6,3 +6,5 @@ const router: Router = express.Router();
 
 
 router.get("/quiz", gamesController.getQuizQuestion);
+
+export default router;
