@@ -7,5 +7,5 @@
             "includeFiles": ["dist/**"]}
         }
     ],
-    "routes": [{ "src": "/(.*)", "dest": "/dist/server.js" }] 
+    "rewrites": [{ "src": "/(.*)", "dest": "/dist/server.js" }] 
 }
