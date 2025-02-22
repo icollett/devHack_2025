@@ -1,4 +1,4 @@
-import express, { Express } from "express";
+import express, { Express, Response, Request } from "express";
 import morgan from "morgan";
 
 import chatbotRoutes from "./api/v1/routes/chatbotRoutes"
@@ -12,6 +12,9 @@ const app: Express = express();
 app.use(morgan("combined"));
 app.use(express.json());
 
+app.get("/", (req, res) => {
+        res.send("hello world")
+});
 
 app.use("/api/v1/games", gamesRoutes)
 app.use("/api/v1/chatbot", chatbotRoutes)
