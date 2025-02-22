@@ -4,9 +4,14 @@
     "main": "index.js",
     "scripts": {
         "start": "ts-node src/server.ts",
-        "build": "tsc",
-        "test": "jest --detectOpenHandles"
+        "build": "rimraf dist && tsc",
+        "test": "jest --detectOpenHandles",
+        "add-build": "git add ./dist"
     },
+    "pre-commit": [
+        "build",
+        "add-build"
+    ],
     "keywords": [],
     "author": "",
     "license": "ISC",
@@ -27,6 +32,8 @@
         "@types/express": "^5.0.0",
         "express": "^4.21.2",
         "joi": "^17.13.3",
-        "morgan": "^1.10.0"
+        "morgan": "^1.10.0",
+        "pre-commit": "^1.2.2",
+        "rimraf": "^6.0.1"
     }
 }
